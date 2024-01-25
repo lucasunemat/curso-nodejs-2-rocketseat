@@ -27,3 +27,15 @@ INSTALANDO O FASTIFY
 * ele é microframework porque não determina/opina sobre estruturas de pastas
   ou padrões mais rígidos para seguir. Ele se concentra em funcionalidades;
 * suporte nativo para TS sem precisar instalar novas bibliotecas
+
+ESLINT
+
+* Extensão
+* npm install -D eslint
+* tem comando para instalar dependencias da rockeseat
+* deixe o .eslintrc.json com o "extends":"@rockeseat/eslint-config/node"
+* garanta que no settings.json a opção codeActionOnSave esteja para eslint.fixAll : true (algo assim)
+* no packtage.json:     "lint": "eslint src -e .ts --fix" em scripts
+  * ele vai listar os erros e depois corrigir tudo de uma vez (--fix)
+  * aparentemente a correção por salvamento só funciona depois de executar
+    esse comando com --fix pelo menos uma vez
