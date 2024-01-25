@@ -39,3 +39,24 @@ ESLINT
   * ele vai listar os erros e depois corrigir tudo de uma vez (--fix)
   * aparentemente a correção por salvamento só funciona depois de executar
     esse comando com --fix pelo menos uma vez
+
+SQLite
+
+* Muito parecido com mysql, postgresql, etc 
+* Salvo em arquivos fisicos no repositorio da API
+* não precisa subir nem baixar nada
+* Formas de comunicação:
+  * Biblioteca de baixo nivel (Drivers) que permitem conversar com o BD 
+    * ex: nodesql2
+    * você passa querys mais "cruas" , tipo as que vc usou no app java
+  * QueryBuilders: não precisa saber tanto sobre query pq ele constroi pra ti 
+    * Knex.js (mistura js e codigo sql para montar query num arquivo .sql automaticamente)
+      * querybuildes a sintaxe é reaproveitada para todos os bancos que ela tem suporte
+      * ou seja, você só muda a url com o tipo novo de banco que vc quer migrar e o codigo que
+        vc fez ára buildar querys no banco anterior é convertido para a sintaxe do novo banco
+
+KNEX.JS
+
+* Primeiro instale o driver do banco que vc quer usar 
+  * ex: npm install knex sqlite3 (instaladas na produção pq serão usadas em prod também)
+  
