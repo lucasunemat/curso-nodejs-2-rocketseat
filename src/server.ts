@@ -1,8 +1,8 @@
-import fastify from "fastify";
+import fastify from 'fastify'
 
-const app = fastify();
+const app = fastify()
 
-// fazendo um GET com fastify: http://localhost:3333/hello 
+// fazendo um GET com fastify: http://localhost:3333/hello
 // primeiro vem o recurso, depois função com o retorno desejado
 
 /**
@@ -16,13 +16,16 @@ const app = fastify();
  * e Deno entendem.
  */
 
-app.get("/hello", () => {
-    return "Hello World";
+app.get('/hello', () => {
+  return 'Hello World'
 })
 
 // o listen ouve uma porta e é uma promise
 // quando ele retornar resposta, ele vai executar o then
-app.listen({
-    port: 3333
-}).then(() => { console.log('HTTP Server Running!') })
-
+app
+  .listen({
+    port: 3333,
+  })
+  .then(() => {
+    console.log('HTTP Server Running!')
+  })
