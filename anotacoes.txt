@@ -80,3 +80,16 @@ MIGRATIONS - SQLite
         extension: 'ts',
         directory: './db/migrations',
       }
+* Como executar uma migration para criar tabelas: npm run knex -- migrate:latest
+* A migration tem o up para executar e criar e o down para caso der erro e precisar
+  desfazer tudo
+    * Knex_migrations anota quais migrations já foram executadas
+    * Se a migration já foi executada e foi para o time, não pode ser alterada
+    * Tem que fazer uma nova migration para corrigir o nome do campo ou sla 
+    * Isso pq se a pessoa recebe a migration errada e ela executar, já era. Não consegue
+      pegar a migration editada mais. Só consegue pegar uma nova migration para corrigir
+    * Se você esqueceu de algo mas AINDA NÃO ENVIOU, aí você faz "npm run knex -- migrate:rollback" para voltar
+    * Aí sim você vai poder alterar
+* Em um caso hipotético de precisar adicionar um id:
+  * npm run knex -- migrate:make add-session-id-to-transaction => criar uma nova migration
+  * 
