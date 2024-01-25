@@ -60,3 +60,11 @@ KNEX.JS
 * Primeiro instale o driver do banco que vc quer usar 
   * ex: npm install knex sqlite3 (instaladas na produção pq serão usadas em prod também)
   
+MIGRATIONS - SQLite
+
+* São histórico de todas as mudanças feitas no banco de dados
+* Anotadas com data e horário das mudanças (linha do tempo)
+* Há tabela criada chamada Migrations onde tenho esse histórico
+* É tipo um git para banco de dados
+* Comando para criação: npx knex migrate:make create-documents 
+  * create-documents é o nome do arquivo
