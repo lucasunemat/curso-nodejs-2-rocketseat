@@ -1,0 +1,29 @@
+COMO FAZER TS RODAR NO SEU VSCODE
+
+* Instalando TS: npm i -D typescript
+* Criar arquivo de config: npx tsc --init 
+    * npx é feature do nodejs para executar binários executáveis
+      de bibliotecas que baixamos (no caso, da biblioteca TS, a tsc)
+* Agora você troca o ecmascript para versão mais recente (a fim de FAZER
+  o TS compilar para versões mais recentes de JS): { "target": "es2020" }
+* Para fazer node entender TS: npm install -D @types/node
+* Para compilar um arquivo .ts para .js: npx tsc src/index.ts
+* Depois só pega o arquivo .js gerado e: node src/index.js
+* Para facilitar a vida:
+  * npm install tsx -D => automatiza conversao para js e já executa
+  * ex de uso: npx tsx /src/server.js
+  * para agilizar mais, vai no packtage.json e adicione { "dev":"tsx watch src/server.ts" }
+  * com isso, só executar npm run dev que pah, você converte tudo para js e compila 
+    * além de que o WATCH faz o server ficar moniotrando alterações e atualizando a cada alteração
+  * usamos só em ambiente desenvolvimento para facilitar testes
+  * agora na produção o ideal é converter tudo para JS e compilar o JS 
+    * facilita achar erros
+    * é + rápido executar JS
+
+INSTALANDO O FASTIFY
+
+* npm i fastify 
+* microframework para desenvolvimento de backend
+* ele é microframework porque não determina/opina sobre estruturas de pastas
+  ou padrões mais rígidos para seguir. Ele se concentra em funcionalidades;
+* suporte nativo para TS sem precisar instalar novas bibliotecas
