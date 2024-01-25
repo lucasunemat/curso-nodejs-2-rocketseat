@@ -71,7 +71,12 @@ MIGRATIONS - SQLite
 * Para configurar uma migration, foi preciso:
   1. Exportar configurações de conexão com banco (export cons config em database.ts) e importar num arquivo chamado knexfile.ts 
      que você cria na raiz do setup;
-  2. Criação de um script no packtage.json: "knex": "node --import tsx ./node_modules/knex/bin/cli.js"
+  2. Criação de um script no packtage.json: "knex": "node --no-warnings --import tsx ./node_modules/knex/bin/cli.js"
     2.1 Ele basicamente usa a engine do node para carregar o tsx (o transformador e compilador automatico ts->js)
         para executar o knex usando o arquivo knexfile.ts que tem as config do banco
   3. Com isso, uma pasta chamada migrations é criada com um arquivo ts (create-documents)
+  4. Dentro da sua variavel config, importe Knex (maisculo) de 'knex', insira tipagem (config: Knex.Config) e coloque:   
+      migrations: {
+        extension: 'ts',
+        directory: './db/migrations',
+      }
