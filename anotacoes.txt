@@ -103,3 +103,20 @@ ENTENDENDO ESSE PROJETO
     tsx (compilador node->ts) e arquivos .ts
   * Em todos os casos foi utilizado o npm para instalações & npx
     para execução de binários
+
+VARIÁVEIS DE ambiente
+
+* Ambiente de Staging: preview da produção;
+* Ambiente de produção;
+* Ambiente de testes;
+* Usando .env:
+  * Vá na loja de extensões e instale o dotenv (extensão mais baixada, autor mikestead)
+  * Crie um arquivo .env com as variáveis que você está usando (ex: DATABASE_URL="./db/app.db")
+  * Para o node conseguir ler isso, vai precisar instalar dotenv (de novo?) usando "npm i dotenv"
+  * Após isso, só importar no seu arquivo database.ts com "import 'dotenv/config'" e todos os va-
+    lores do arquivo .env serão colocados em variavel global chamada process.env
+* Você PRECISA colocar o .env no .gitignore pois dentro do .env pode conter chaves de API de 
+  terceiros que vão ser utilizadas pela aplicação em certo ambiente. Você precisa proteger essa 
+  informação.
+* Para que a pessoa que analsie o repositorio consiga trabalhar com a aplicação, crie um .env.example
+  * Ele serve para a pessoa ter uma ideia do 
