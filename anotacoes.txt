@@ -92,4 +92,14 @@ MIGRATIONS - SQLite
     * Aí sim você vai poder alterar
 * Em um caso hipotético de precisar adicionar um id:
   * npm run knex -- migrate:make add-session-id-to-transaction => criar uma nova migration
-  * 
+
+ENTENDENDO ESSE PROJETO
+
+* Instalações:
+  * TS
+  * Fastify = não precisou de novas extensões para TS nem Node
+  * ESLINT = configurado com '/node'
+  * KNEX = precisou de configurações que envolveram uso do npm,
+    tsx (compilador node->ts) e arquivos .ts
+  * Em todos os casos foi utilizado o npm para instalações & npx
+    para execução de binários

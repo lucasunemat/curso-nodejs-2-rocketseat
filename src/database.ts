@@ -1,4 +1,4 @@
-import { knex as setupKnex, Knex } from 'knex' // importando o knex
+import { knex as setupKnex, Knex } from 'knex' // importando o knex e renomeando para setupKnex
 
 // configurando o tipo de banco e dados de conexão (aqui iria user, senha, etc)
 // no caso de sqlite só precisa do filename

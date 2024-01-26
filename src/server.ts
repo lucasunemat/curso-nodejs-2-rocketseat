@@ -1,5 +1,6 @@
 import fastify from 'fastify'
-import { knex } from './database'
+import { knex } from './database' // constante que tem o setupKnex dentro dela
+import crypto from 'node:crypto'
 
 const app = fastify()
 
@@ -18,9 +19,18 @@ const app = fastify()
  */
 
 app.get('/hello', async () => {
-  const tables = await knex('sqlite_schema').select('*')
-
-  return tables
+  const transactions = await knex('transactions')
+    .select('*')
+    .where('id', '9ab02c07-e374-4918-af67-d57752205456')
+  /*  
+  .insert({
+      id: crypto.randomUUID(),
+      title: 'Transação de teste',
+      amount: 1000,
+    })
+    .returning('*') // indicando que quero que as info inseridas retornem na tela ao fim da transaction
+  */
+  return transactions
 })
 
 // o listen ouve uma porta e é uma promise
