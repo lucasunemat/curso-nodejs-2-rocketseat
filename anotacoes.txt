@@ -120,3 +120,15 @@ VARIÁVEIS DE ambiente
   informação.
 * Para que a pessoa que analsie o repositorio consiga trabalhar com a aplicação, crie um .env.example
   * Ele serve para a pessoa ter uma ideia do 
+
+  INSTALANDO ZOD
+
+  * npm i zod
+  * Pode validar qualquer dado (formularios, variaveis ambiente, etc)
+  * A partir da configuração via dotenv/config que o arquivo index.ts 
+    da pasta env/ recebeu, o zod pegou o zodSchema e validou jogando 
+    tudo na const env que agora está sendo a base para buscar infor-
+    mações de porta, url de database e NODE_ENV. Ou seja, se agora uma
+    das informações faltarem (porta, url e NODE_ENV), vai dar erro por-
+    que o zodSchema usado pela var env tem alguma dessas info como 
+    obrigatórias

@@ -1,5 +1,5 @@
-import 'dotenv/config' // importando o dotenv para ler as variáveis de ambiente
 import { knex as setupKnex, Knex } from 'knex' // importando o knex e renomeando para setupKnex
+import { env } from './env'
 
 if (!process.env.DATABASE_URL) {
   throw new Error('DATABASE_URL must be set')
@@ -11,7 +11,7 @@ if (!process.env.DATABASE_URL) {
 export const config: Knex.Config = {
   client: 'sqlite',
   connection: {
-    filename: process.env.DATABASE_URL, // caminho relativo ao arquivo que está guardando dados
+    filename: env.DATABASE_URL, // caminho relativo ao arquivo que está guardando dados
   },
   useNullAsDefault: true, // todos os campos sem info vão ser nulos por padrão
   migrations: {

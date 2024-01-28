@@ -1,6 +1,7 @@
 import fastify from 'fastify'
 import { knex } from './database' // constante que tem o setupKnex dentro dela
-import crypto from 'node:crypto'
+import { env } from './env'
+// import crypto from 'node:crypto'
 
 const app = fastify()
 
@@ -37,7 +38,7 @@ app.get('/hello', async () => {
 // quando ele retornar resposta, ele vai executar o then
 app
   .listen({
-    port: 3333,
+    port: env.PORT,
   })
   .then(() => {
     console.log('HTTP Server Running!')
