@@ -132,3 +132,20 @@ VARIÁVEIS DE ambiente
     das informações faltarem (porta, url e NODE_ENV), vai dar erro por-
     que o zodSchema usado pela var env tem alguma dessas info como 
     obrigatórias
+
+  SOBRE REQUISITOS
+
+  * RF
+    * usuário pode criar nova transação;
+    * usuário pode obter resumo da conta;
+    * listar todas transações ocorridas;
+    * usuário deve poder visualizar uma transação única
+
+  * RN = coisas que acontecem ou podem acontecer e app vai validar / sem espefic. técnicas
+    * transação pode ser do tipo crédito que somará ao valor total
+    * ou débito que subtrairá do valor total
+    * deve ser possível identificar usuário entre as requisições
+    * usuário só visualiza transações que ele criou
+
+  * RNF = partes mais técnicas, o que será usado, etc
+    * 
