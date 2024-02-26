@@ -31,6 +31,8 @@ export async function transactionsRoutes(app: FastifyInstance) {
 
         // pedindo para retorna o primeiro que encontrar (se não retorna array)
         const transaction = await knex('transactions').where('id', id).first()
+
+        return { transaction }
     })
 
     //já vai ser /transactions porque foi passado no app.register
