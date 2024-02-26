@@ -20,4 +20,9 @@ export const config: Knex.Config = {
   },
 }
 
+// exportação da constante contendo configurações do banco de dados
 export const knex = setupKnex(config)
+
+// const knex --> server.ts
+// env --> server.ts
+// env --> database.ts --> knexfile.ts

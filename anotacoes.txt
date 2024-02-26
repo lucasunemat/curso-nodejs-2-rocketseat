@@ -69,7 +69,7 @@ MIGRATIONS - SQLite
 * Comando para criação: npx knex migrate:make create-documents 
   * create-documents é o nome do arquivo
 * Para configurar uma migration, foi preciso:
-  1. Exportar configurações de conexão com banco (export cons config em database.ts) e importar num arquivo chamado knexfile.ts 
+  1. Exportar configurações de conexão com banco (export const config em database.ts) e importar num arquivo chamado knexfile.ts 
      que você cria na raiz do setup;
   2. Criação de um script no packtage.json: "knex": "node --no-warnings --import tsx ./node_modules/knex/bin/cli.js"
     2.1 Ele basicamente usa a engine do node para carregar o tsx (o transformador e compilador automatico ts->js)
