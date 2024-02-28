@@ -35,6 +35,12 @@ export async function transactionsRoutes(app: FastifyInstance) {
         return { transaction }
     })
 
+    app.get('/summary', async () => {
+        const summary = await knex('transactions').sum('amount')
+
+        return { summary }
+    })
+
     //já vai ser /transactions porque foi passado no app.register
     app.post('/', async (request, reply) => {
         // request.body é o corpo da requisição
